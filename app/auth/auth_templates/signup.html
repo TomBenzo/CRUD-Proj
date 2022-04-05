@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+<style>
+    body {
+      background-image: url('https://airwallpaper.com/wp-content/uploads/wall003/Beautiful-Beige-Wallpaper-620x349.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style>
+    <form method="POST" action="{{ url_for('signMeUp') }}" >
+        {{ form.hidden_tag() }}
+
+         {{ form.email.label() }}
+         {{ form.email(class='input-space', placeholder='Email', autocomplete= "off") }}
+
+         {{ form.password.label()}}
+         {{ form.password(class='input-space', placeholder='Password', autocomplete= "off") }}
+         
+         
+         {{ form.confirm_password.label() }}
+         {{ form.confirm_password(class='input-space', placeholder='Confirm Password', autocomplete= "off") }}
+         
+         
+         {{ form.submit(class= 'signup') }}
+    </form>
+    
+
+
+         
+{% endblock content %}
