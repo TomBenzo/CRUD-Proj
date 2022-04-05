@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        {% for product in products %}
+            <a href='{{ url_for("shop.individualProduct", product_id=product.id) }}' class="card" style="width: 18rem;">
+                <img src="{{ product.image }}" class="card-img-top" alt="{{ product.product_name }}">
+                <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.caption }}</p>
+                </div>
+            </a>
+
+
+
+        {% endfor %}
+{% endblock content %}
